@@ -11,18 +11,18 @@ Letargia es un buscador de vuelos para aventureros.
 
 Solo debes introducir el aeropuerto de salida y la fecha de salida y Letargia te buscará los vuelos mas económicos a cualquier lugar.
 
-Solo para uso educacional. Usando este software podrías violar los TOS de [Google Flight TOS](https://www.google.com/intl/en/policies/terms/).
+Solo para uso educacional. Usando este software podrías violar los TOS de [Google Flight](https://www.google.com/intl/en/policies/terms/).
 
 
 
-###How it works
+##How it works
 Letargia is a simple Python script that uses selenium to execute a web browser and crawl Google Flights web to show best prices from your airport. It was designed to use in Linux/Unix system. Not tested on windows.
 
 _Note: It could fail if you internet connection is really poor._
 
 
 
-###Requirements
+##Requirements
 
 #####Python 3.5
 Obviously you need python to execute the script.
@@ -40,7 +40,7 @@ If you are using unix system you have to add the executable to the PATH. The sim
 
 
 
-###Bugs and next steps
+##Bugs and next steps
 - [BUG] Now introduced date is not good processed by Google Flight.
 - [NEXT] Don't include repeated results.
 - [NEXT] Instead of showing result in console, it could be fine to show it in an HTML file.
@@ -49,8 +49,10 @@ If you are using unix system you have to add the executable to the PATH. The sim
 
 
 
-###About
+##About
 Designed and programmed by _Marc Hernández Cabot_.
+
 License: GPL 3
+
 
 ¡Pull requests are welcome!
