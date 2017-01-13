@@ -1,9 +1,9 @@
 # Letargia
-Letargia is a flight search engine for adventurous people.
+Letargia is a flight search engine (now just a python script!) for adventurous people.
 
-You only has to introduce the departure airport and departure date and Letargia it's going to search for you the most cheap flight to anywhere.
+You only has to introduce the departure airport and departure date and Letargia it's going to search for you the most cheap flights to anywhere.
 
-Educational use only. Using this software you could violate [Google Flight TOS](https://www.google.com/intl/en/policies/terms/).
+
 
 - - - - - 
 
@@ -11,14 +11,21 @@ Letargia es un buscador de vuelos para aventureros.
 
 Solo debes introducir el aeropuerto de salida y la fecha de salida y Letargia te buscará los vuelos mas económicos a cualquier lugar.
 
-Solo para uso educacional. Usando este software podrías violar los TOS de [Google Flight](https://www.google.com/intl/en/policies/terms/).
 
+
+##Important notice
+
+This software is in alpha state and it's for Educational use only. 
+
+To work, it get info from Google Flight. Using this software you could violate [Google Flight TOS](https://www.google.com/intl/en/policies/terms/).
+
+Also it's important to note that Google can change easyly Google Flight website structure and in that case this script it's going to fail.
 
 
 ##How it works
-Letargia is a simple Python script that uses selenium to execute a web browser and crawl Google Flights web to show best prices from your airport. It was designed to use in Linux/Unix system. Not tested on windows.
+Letargia is a simple Python script that uses selenium to execute a web browser and scrap Google Flights web to show best prices from your airport. It was designed to use in Linux/Unix system. Not tested on windows.
 
-_Note: It could fail if you internet connection is really poor._
+_Note: It could fail if your internet connection is really poor._
 
 
 
@@ -29,6 +36,7 @@ Obviously you need python to execute the script.
 
 #####Selenium for python:
 To get selenium, if you have pip installed, just do:
+
 `pip install selenium`
 
 If you are running it over linux, maybe super user is required.
@@ -41,12 +49,15 @@ If you are using unix system you have to add the executable to the PATH. The sim
 
 
 ##Bugs and next steps
-- [BUG] Now introduced date is not good processed by Google Flight.
-- [NEXT] Don't include repeated results.
-- [NEXT] Instead of showing result in console, it could be fine to show it in an HTML file.
-- [NEXT] Add a budget option. Now is fixed on 50€.
+- [NEXT] "Take me home" option. Option to find best options to back home once you have decided where to go.
+- [NEXT] Instead of showing result in console, show it in an HTML file.
+- [NEXT] Add a budget option. Now it's fixed on 50€.
 - [NEXT] Graphical interface to select dates and departure airport.
 
+##Log
+- [SOLVED] Date doesn't work properly.
+- [DONE] Now it doesn't includes repeated results.
+- [DONE] Now prices are shown in order.
 
 
 ##About
