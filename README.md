@@ -15,17 +15,17 @@ Solo debes introducir el aeropuerto de salida y la fecha de salida y Letargia te
 
 ##Important notice
 
-This software is in alpha state and it's for Educational use only. 
+This software is in alpha state and it's for educational use only. 
 
-To work, it get info from Google Flight. Using this software you could violate [Google Flight TOS](https://www.google.com/intl/en/policies/terms/).
+To work, it gets info from Google Flight. Using this software you could violate [Google Flight TOS](https://www.google.com/intl/en/policies/terms/).
 
-Also it's important to note that Google can change easyly Google Flight website structure and in that case this script it's going to fail.
+Also it's important to note that Google can change Google Flight website structure and in that case this script is going to fail.
 
 
 ##How it works
 Letargia is a simple Python script that uses selenium to execute a web browser and scrap Google Flights web to show best prices from your airport. It was designed to use in Linux/Unix system. Not tested on windows.
 
-_Note: It could fail if your internet connection is really poor._
+_Note: If your internet connection is really poor it could fail._
 
 
 
@@ -66,4 +66,4 @@ Designed and programmed by _Marc Hernández Cabot_.
 License: GPL 3
 
 
-¡Pull requests are welcome!
+Pull requests are welcome!
