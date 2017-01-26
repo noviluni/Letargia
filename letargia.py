@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
+
 def init_driver():
     '''This function initialize the webdriver'''
     driver = webdriver.Firefox()
@@ -20,17 +21,17 @@ def lookup(driver, airport, date):
     driver.get(url)
     try:
         button = driver.wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR,".EESPNGB-J-e")))
+            (By.CSS_SELECTOR, ".EESPNGB-J-e")))
         box = driver.wait.until(EC.presence_of_element_located(
             (By.CSS_SELECTOR, "div.EESPNGB-G-l:nth-child(1)")))
         box.click()
         box.send_keys(date)
         flightList = []
-        i=0
+        i = 0
         while i < 15:
             button.click()
             time.sleep(3)
-            i+=1
+            i += 1
             result = info_extractor(driver)
             flightList.append(result)
         return flightList
@@ -38,18 +39,22 @@ def lookup(driver, airport, date):
         print("Button not found.")
 
 
-
 def info_extractor(driver):
-    '''This function get flights from the website. Returns The result (3 dimensional string vector).'''
-    countryName = driver.find_elements_by_css_selector(".EESPNGB-K-P > a:nth-child(1)")[0].text
-    flightInfo = driver.find_elements_by_css_selector("div.EESPNGB-K-q:nth-child(1) > div:nth-child(1) > div:nth-child(2)")[0].text
-    price = driver.find_elements_by_css_selector("div.EESPNGB-K-q:nth-child(1) > div:nth-child(1) > div:nth-child(3)")[0].text
-    result = [countryName,flightInfo,price]
+    '''This function get flights from the website. Returns The result
+        (3 dimensional string vector).'''
+    countryName = driver.find_elements_by_css_selector(
+        ".EESPNGB-K-P > a:nth-child(1)")[0].text
+    flightInfo = driver.find_elements_by_css_selector(
+        "div.EESPNGB-K-q:nth-child(1) > div:nth-child(1) > div:nth-child(2)")[0].text
+    price = driver.find_elements_by_css_selector(
+        "div.EESPNGB-K-q:nth-child(1) > div:nth-child(1) > div:nth-child(3)")[0].text
+    result = [countryName, flightInfo, price]
     return result
 
 
 def list_corrector(flightList):
-    '''This function transform the flight list in a new list which only has unique values'''
+    '''This function transform the flight list in a new list which only
+    has unique values'''
     newFlightList = []
     for flight in flightList:
         if flight not in newFlightList:
@@ -57,9 +62,9 @@ def list_corrector(flightList):
     return newFlightList
 
 
-
 def priceListGenerator(newFlightList):
-    '''This function get best prices and return the flightlist in order from the chepeast.'''
+    '''This function get best prices and return the flightlist in order from
+    the chepeast.'''
     priceList = []
     for flight in newFlightList:
         if flight[2] != "":
@@ -67,10 +72,8 @@ def priceListGenerator(newFlightList):
             priceList.append(int(price[:-2]))
         else:
             pass
-    bestPriceList = [x for (y,x) in sorted(zip(priceList,newFlightList))]
+    bestPriceList = [x for (y, x) in sorted(zip(priceList, newFlightList))]
     return bestPriceList
-
-
 
 
 if __name__ == "__main__":
@@ -81,6 +84,6 @@ if __name__ == "__main__":
     correctList = list_corrector(flightList)
     bestPriceList = priceListGenerator(correctList)
     print("\nEstos son los vuelos más baratos desde tu aeropuerto de salida: ")
-    for flight in bestPriceList: 
+    for flight in bestPriceList:
         print(flight)
     driver.quit()
