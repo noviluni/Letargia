@@ -13,7 +13,7 @@ Solo debes introducir el aeropuerto de salida y la fecha de salida y Letargia te
 
 
 
-##Important notice
+## Important notice
 
 This software is in alpha state and it's for educational use only. 
 
@@ -22,45 +22,53 @@ To work, it gets info from Google Flight. Using this software you could violate 
 Also it's important to note that Google can change Google Flight website structure and in that case this script is going to fail.
 
 
-##How it works
+## How it works
+
 Letargia is a simple Python script that uses selenium to execute a web browser and scrap Google Flights web to show best prices from your airport. It was designed to use in Linux/Unix system. Not tested on windows.
 
 _Note: If your internet connection is really poor it could fail._
 
 
 
-##Requirements
+## Requirements
 
-#####Python 3.5
+##### Python 3.5
+
 Obviously you need python to execute the script.
 
-#####Selenium for python:
+
+##### Selenium for python:
+
 To get selenium, if you have pip installed, just do:
 
 `pip install selenium`
 
 If you are running it over linux, maybe super user is required.
 
-#####Geckodriver
+
+##### Geckodriver
+
 Download from [here](https://github.com/mozilla/geckodriver/releases) your version and decompress it.
 
 If you are using unix system you have to add the executable to the PATH. The simple way in linux is to move the executable to /usr/bin (super user required). Be sure the executable has executing permission.
 
 
+## Bugs and next steps
 
-##Bugs and next steps
 - [NEXT] "Take me home" option. Option to find best options to back home once you have decided where to go.
 - [NEXT] Instead of showing result in console, show it in an HTML file.
 - [NEXT] Add a budget option. Now it's fixed on 50€.
 - [NEXT] Graphical interface to select dates and departure airport.
 
-##Log
+## Log
+
 - [SOLVED] Date doesn't work properly.
 - [DONE] Now it doesn't includes repeated results.
 - [DONE] Now prices are shown in order.
 
 
-##About
+## About
+
 Designed and programmed by _Marc Hernández Cabot_.
 
 License: GPL 3
